@@ -38,3 +38,21 @@ titulo2.classList.add("text-center");
 titulo2.style.color = "blue";
 // Mostrar contenido en consola
 console.log(titulo2);
+
+// Crear un elemento
+const nuevoElemento = document.createElement("p");
+nuevoElemento.textContent = "Este es un nuevo párrafo creado desde JavaScript.";
+// Agregar el nuevo elemento al DOM
+const contenedor = document.querySelector("#contenedor");
+contenedor.appendChild(nuevoElemento);
+// Eliminar un elemento
+const elementoAEliminar = document.querySelector("#elemento-a-eliminar");
+if (elementoAEliminar) {
+    elementoAEliminar.remove();
+}
+// Modificar el contenido de un elemento
+const elementoAModificar = document.querySelector("#elemento-a-modificar");
+if (elementoAModificar) {
+    elementoAModificar.textContent =
+        "Este contenido ha sido modificado desde JavaScript.";
+}
