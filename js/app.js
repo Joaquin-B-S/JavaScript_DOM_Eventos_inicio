@@ -56,3 +56,67 @@ if (elementoAModificar) {
     elementoAModificar.textContent =
         "Este contenido ha sido modificado desde JavaScript.";
 }
+
+// Eventos
+// Evento de mouseover
+const elementoHover = document.querySelector("#elemento-hover");
+elementoHover.addEventListener("mouseover", () => {
+    elementoHover.style.backgroundColor = "lightblue";
+});
+// Evento de mouseout
+elementoHover.addEventListener("mouseout", () => {
+    elementoHover.style.backgroundColor = "";
+});
+// Evento de cambio de valor en un input
+const inputTexto = document.querySelector("#input-texto");
+inputTexto.addEventListener("input", (e) => {
+    console.log("Valor del input:", e.target.value);
+});
+// Evento de envío de formulario
+const formulario = document.querySelector("#formulario");
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault(); // Evitar el envío del formulario
+    const datos = new FormData(formulario);
+    console.log("Datos del formulario:", Object.fromEntries(datos.entries()));
+});
+// Evento de cambio de selección en un select
+const selectOpciones = document.querySelector("#select-opciones");
+selectOpciones.addEventListener("change", (e) => {
+    console.log("Opción seleccionada:", e.target.value);
+});
+// Evento de teclado
+const inputTeclado = document.querySelector("#input-teclado");
+inputTeclado.addEventListener("keydown", (e) => {
+    console.log("Tecla presionada:", e.key);
+});
+// Evento de doble clic
+const elementoDobleClick = document.querySelector("#elemento-doble-click");
+elementoDobleClick.addEventListener("dblclick", () => {
+    alert("¡Has hecho doble clic en este elemento!");
+});
+// Evento de cambio de tamaño de ventana
+window.addEventListener("resize", () => {
+    console.log(
+        "Tamaño de ventana cambiado:",
+        window.innerWidth,
+        "x",
+        window.innerHeight
+    );
+});
+// Evento de scroll
+window.addEventListener("scroll", () => {
+    console.log("Posición de scroll:", window.scrollY);
+});
+// Evento de carga de la página
+window.addEventListener("load", () => {
+    console.log("Página cargada completamente");
+});
+// Evento de enfoque en un input
+const inputEnfoque = document.querySelector("#input-enfoque");
+inputEnfoque.addEventListener("focus", () => {
+    console.log("Input enfocado");
+});
+// Evento de desenfoque en un input
+inputEnfoque.addEventListener("blur", () => {
+    console.log("Input desenfocado");
+});
